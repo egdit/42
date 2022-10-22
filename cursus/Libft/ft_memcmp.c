@@ -1,58 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 12:27:51 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:04:35 by egur             ###   ########.fr       */
+/*   Created: 2022/10/08 11:41:59 by egur              #+#    #+#             */
+/*   Updated: 2022/10/08 11:42:01 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c == '\v' || c == '\n' || c == '\t'
-		|| c == '\r' || c == '\f' || c == ' ')
-		return (1);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		else
+			i++;
+	}
 	return (0);
 }
-
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
-}
-
-/*
+/* 
 #include <stdio.h>
 #include <string.h>
 int main()
 {
     //Test
-	char *test = "   +12354asfsav";
-	printf("%d\n",ft_atoi(test));
+	char *test1 = "abc";
+    char *test2 = "def";
+	printf("%d\n",ft_memcmp(test1,test2,1));
 
     printf("=========================================================\n");
 
     //Orijinal
-    char *orj = "asd-4363534dsvdsv";
-	printf("%d\n",atoi(orj));
+    char *orj1 = "abc";
+    char *orj2 = "def";
+	printf("%d\n",memcmp(orj1,orj2,1));
 }
 */

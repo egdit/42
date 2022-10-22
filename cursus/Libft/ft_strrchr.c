@@ -1,58 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 12:27:51 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:04:35 by egur             ###   ########.fr       */
+/*   Created: 2022/10/08 10:59:15 by egur              #+#    #+#             */
+/*   Updated: 2022/10/08 10:59:19 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	if (c == '\v' || c == '\n' || c == '\t'
-		|| c == '\r' || c == '\f' || c == ' ')
-		return (1);
+	const char	*string;
+
+	string = str;
+	while (*str)
+		str++;
+	if (c == 0)
+		return ((char *)str);
+	while (str >= string)
+	{
+		if (*str == c)
+			return ((char *)str);
+		str--;
+	}
 	return (0);
 }
 
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
-}
-
-/*
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 int main()
 {
     //Test
-	char *test = "   +12354asfsav";
-	printf("%d\n",ft_atoi(test));
+	char *test = "ensar";
+	printf("%s\n",ft_strrchr(test,114));
 
     printf("=========================================================\n");
 
     //Orijinal
-    char *orj = "asd-4363534dsvdsv";
-	printf("%d\n",atoi(orj));
-}
-*/
+    char *orj = "ensar";
+	printf("%s\n",strrchr(orj,114));
+}  */

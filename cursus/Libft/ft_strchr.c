@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:55:15 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:05:44 by egur             ###   ########.fr       */
+/*   Created: 2022/10/07 09:43:37 by egur              #+#    #+#             */
+/*   Updated: 2022/10/07 09:43:39 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	return ((ft_isalpha(c) != 0) || (ft_isdigit(c) != 0));
+	while (*s != '\0' && c != *s)
+		s++;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
 }
+
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+    //Test
+	char *test = "ensar";
+	printf("%s\n",ft_strchr(test,115));
+
+    printf("=========================================================\n");
+
+    //Orijinal
+    char *orj = "ensar";
+	printf("%s\n",strchr(orj,115));
+}*/

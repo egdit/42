@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:55:15 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:05:44 by egur             ###   ########.fr       */
+/*   Created: 2022/10/22 15:46:21 by egur              #+#    #+#             */
+/*   Updated: 2022/10/22 17:43:54 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	return ((ft_isalpha(c) != 0) || (ft_isdigit(c) != 0));
+	unsigned int	i;
+
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		++i;
+	}
 }

@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 12:27:51 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:04:35 by egur             ###   ########.fr       */
+/*   Created: 2022/10/08 11:29:34 by egur              #+#    #+#             */
+/*   Updated: 2022/10/15 17:09:17 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c == '\v' || c == '\n' || c == '\t'
-		|| c == '\r' || c == '\f' || c == ' ')
-		return (1);
-	return (0);
-}
+	unsigned char	*str;
+	size_t			i;
 
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+' || *str == '-')
+	str = (unsigned char *)s;
+	c = (unsigned char)c;
+	i = 0;
+	while (i < n)
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		if (str[i] == c)
+			return ((void *)str + i);
+		i++;
 	}
-	while (ft_isdigit(*str))
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	return (0);
 }
 
 /*
@@ -46,13 +35,15 @@ int	ft_atoi(const char *str)
 int main()
 {
     //Test
-	char *test = "   +12354asfsav";
-	printf("%d\n",ft_atoi(test));
+	char *test = "http://www.egdit.epizy.com";
+    char test_c = 'w';
+	printf("%s\n",ft_memchr(test,test_c,11));
 
     printf("=========================================================\n");
 
     //Orijinal
-    char *orj = "asd-4363534dsvdsv";
-	printf("%d\n",atoi(orj));
+    char *orj = "http://www.usturlap.epizy.com";
+    char orj_c = 'w';
+	printf("%s\n",memchr(orj,orj_c,11));
 }
 */

@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:55:15 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:05:44 by egur             ###   ########.fr       */
+/*   Created: 2022/10/08 13:58:21 by egur              #+#    #+#             */
+/*   Updated: 2022/10/22 17:41:30 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	return ((ft_isalpha(c) != 0) || (ft_isdigit(c) != 0));
+	char	*str;
+	size_t	i;
+	size_t	j;
+
+	str = (char *)malloc(len + 1);
+	if (!s || !str)
+		return (0);
+	i = start;
+	j = 0;
+	while (i < ft_strlen(s) && j < len)
+		str[j++] = s[i++];
+	str[j] = '\0';
+	return (str);
 }
+
+/* #include <stdio.h>
+int main()
+{
+    //Test
+    char test_str[] = "Hello World!";
+    char* test = ft_substr(test_str,6,1);
+ 
+    printf("%s\n", test);
+} */

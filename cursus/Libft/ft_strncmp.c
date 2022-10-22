@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 12:27:51 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:04:35 by egur             ###   ########.fr       */
+/*   Created: 2022/10/08 11:13:50 by egur              #+#    #+#             */
+/*   Updated: 2022/10/08 11:13:51 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (c == '\v' || c == '\n' || c == '\t'
-		|| c == '\r' || c == '\f' || c == ' ')
-		return (1);
-	return (0);
-}
+	size_t	i;
 
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	result;
-
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (str1[i] && str2[i] && str1[i] == str2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
 
 /*
@@ -46,13 +30,15 @@ int	ft_atoi(const char *str)
 int main()
 {
     //Test
-	char *test = "   +12354asfsav";
-	printf("%d\n",ft_atoi(test));
+	char *test1 = "abc";
+    char *test2 = "def";
+	printf("%d\n",ft_strncmp(test1,test2,1));
 
     printf("=========================================================\n");
 
     //Orijinal
-    char *orj = "asd-4363534dsvdsv";
-	printf("%d\n",atoi(orj));
+    char *orj1 = "abc";
+    char *orj2 = "def";
+	printf("%d\n",strncmp(orj1,orj2,1));
 }
 */
