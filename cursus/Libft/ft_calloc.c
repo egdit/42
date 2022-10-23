@@ -37,12 +37,14 @@ int main ()
 
    a = (int*)ft_calloc(n, sizeof(int));
    printf("%d tane sayı gir :\n",n);
-   for( i=0 ; i < n ; i++ ) {
+   for( i=0 ; i < n ; i++ )
+   {
       scanf("%d",&a[i]);
    }
 
    printf("Girilen sayılar : ");
-   for( i=0 ; i < n ; i++ ) {
+   for( i=0 ; i < n ; i++ )
+   {
       printf("%d ",a[i]);
    }
    free(a);
