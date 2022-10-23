@@ -26,7 +26,8 @@ void	*ft_calloc(size_t count, size_t size)
 /* #include <stdio.h>
 #include <stdlib.h>
 
-int main () {
+int main ()
+{
     //Test
    int i, n;
    int *a;
