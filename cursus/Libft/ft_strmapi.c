@@ -31,7 +31,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 /* #include <stdio.h>
-char f(unsigned int i, char c)
+char test(unsigned int i, char c)
 {
 	char str;
 	str = c + 1;
@@ -42,6 +42,6 @@ int main()
 {
 	char str1[] = "abcdef";
 	char* str2;
-	str2 = ft_strmapi(str1, *f);
+	str2 = ft_strmapi(str1, *test);
 	printf("%s\n", str2);
 } */

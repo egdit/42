@@ -73,6 +73,7 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
+
 /* #include "stdio.h"
 int main()
 {

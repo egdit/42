@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	tmp = (char *)src;
 	dest = (char *)dst;
-	if (tmp < src)
+	if (tmp < dest)
 	{
 		while (n--)
 			dest[n] = tmp[n];
@@ -28,26 +28,15 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		ft_memcpy(dest, tmp, n);
 	return (dst);
 }
-/* 
-#include <stdio.h>
-#include <string.h>
+
+/* #include <stdio.h>
 int main()
 {
     //Test
-    char test1[] = "Bilgisayar";
-    const char test2[] = "ProgramlarProgramlar";
+    char test1[] = "Ensar";
+    const char test2[] = "Gur";
 
-    printf("orj1 bellek içeriği: %s, orj2 bellek içeriği: %s\n", test1, test2);
+    printf("test1 : %s\ttest2 : %s\n", test1, test2);
     ft_memmove(test1, test2, 10);
-    printf("orj1 bellek içeriği: %s, orj2 bellek içeriği: %s\n", test1, test2);
-
-    printf("=========================================================\n");
-    //Orijinal
-    char orj1[] = "Bilgisayar";
-    const char orj2[] = "ProgramlarProgramlar";
-
-    printf("orj1 bellek içeriği: %s, orj2 bellek içeriği: %s\n", orj1, orj2);
-    memmove(orj1, orj2, 10);
-    printf("orj1 bellek içeriği: %s, orj2 bellek içeriği: %s\n", orj1, orj2);
-}
- */
+    printf("test1 : %s\ttest2 : %s\n", test1, test2);
+} */

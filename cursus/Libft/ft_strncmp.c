@@ -26,19 +26,11 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 
 /*
 #include <stdio.h>
-#include <string.h>
 int main()
 {
     //Test
 	char *test1 = "abc";
     char *test2 = "def";
 	printf("%d\n",ft_strncmp(test1,test2,1));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj1 = "abc";
-    char *orj2 = "def";
-	printf("%d\n",strncmp(orj1,orj2,1));
 }
 */

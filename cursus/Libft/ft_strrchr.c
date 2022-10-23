@@ -31,16 +31,9 @@ char	*ft_strrchr(const char *str, int c)
 }
 
 /* #include <stdio.h>
-#include <string.h>
 int main()
 {
     //Test
-	char *test = "ensar";
+	char *test = "Ensar";
 	printf("%s\n",ft_strrchr(test,114));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj = "ensar";
-	printf("%s\n",strrchr(orj,114));
 }  */

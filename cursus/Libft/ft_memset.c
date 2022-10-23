@@ -24,3 +24,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+/* #include <stdio.h>
+int main()
+{
+    char str[50] = "Ensar 54545454 Gür";
+    printf("str önce  : %s\n", str);
+
+    ft_memset(str + 5, ' ', 10*sizeof(char));
+  
+    printf("str sonra : %s\n", str);
+    return 0;
+} */

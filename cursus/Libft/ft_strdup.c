@@ -27,19 +27,9 @@ char	*ft_strdup(const char *s1)
 }
 
 /* #include<stdio.h>
-#include<string.h>
- 
 int main()
 {
     //Test
-    char test_str[] = "Hello World";
+    char test_str[] = "Hello World!";
     char* test = ft_strdup(test_str);
- 
-    printf("%s\n=================================\n", test);
-
-    //Orijinal
-    char orj_str[] = "Hello World";
-    char* orj = strdup(orj_str);
- 
-    printf("%s\n", orj);
 } */

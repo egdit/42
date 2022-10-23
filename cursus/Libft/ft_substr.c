@@ -34,7 +34,7 @@ int main()
 {
     //Test
     char test_str[] = "Hello World!";
-    char* test = ft_substr(test_str,6,1);
+    char* test = ft_substr(test_str,6,3);
  
     printf("%s\n", test);
 } */

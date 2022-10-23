@@ -22,16 +22,9 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /* #include <stdio.h>
-#include <string.h>
 int main()
 {
     //Test
 	char *test = "ensar";
 	printf("%s\n",ft_strchr(test,115));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj = "ensar";
-	printf("%s\n",strchr(orj,115));
-}*/
+} */

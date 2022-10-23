@@ -36,19 +36,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 }
 /*
 #include <stdio.h>
-#include <string.h>
 int main()
 {
     //Test
-	char *test = "http://www.egdit.epizy.com";
-    char *test_c = "egdit";
+	char *test = "https://github.com/egdit";
+    char *test_c = "github";
 	printf("%s\n",ft_strnstr(test,test_c,20));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj = "http://www.usturlap.epizy.com";
-    char *orj_c = "usturlap";
-	printf("%s\n",strnstr(orj,orj_c,20));
 }
 */

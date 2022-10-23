@@ -54,9 +54,9 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-/*
-#include "stdio.h"
+
+/* #include "stdio.h"
 int main()
 {
-    printf("%s",ft_itoa(12));
-}*/
+    printf("%s",ft_itoa(23));
+} */

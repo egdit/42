@@ -40,19 +40,9 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-/*
-#include <stdio.h>
-#include <string.h>
+/* #include <stdio.h>
 int main()
 {
-    //Test
-	char *test = "   +12354asfsav";
+	char *test = "   ---12354asfsav";
 	printf("%d\n",ft_atoi(test));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj = "asd-4363534dsvdsv";
-	printf("%d\n",atoi(orj));
-}
-*/
+} */

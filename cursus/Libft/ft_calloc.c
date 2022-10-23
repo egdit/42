@@ -31,38 +31,18 @@ int main () {
    int i, n;
    int *a;
 
-   printf("Number of elements to be entered:");
+   printf("Girilecek eleman sayısı : ");
    scanf("%d",&n);
 
    a = (int*)ft_calloc(n, sizeof(int));
-   printf("Enter %d numbers:\n",n);
+   printf("%d tane sayı gir :\n",n);
    for( i=0 ; i < n ; i++ ) {
       scanf("%d",&a[i]);
    }
 
-   printf("The numbers entered are: ");
+   printf("Girilen sayılar : ");
    for( i=0 ; i < n ; i++ ) {
       printf("%d ",a[i]);
    }
    free(a);
-   printf("\n==================================\n");
-   
-   //Orijinal
-   int z, x;
-   int *y;
-
-   printf("Number of elements to be entered:");
-   scanf("%d",&x);
-
-   y = (int*)ft_calloc(n, sizeof(int));
-   printf("Enter %d numbers:\n",x);
-   for( z=0 ; z < x ; z++ ) {
-      scanf("%d",&y[z]);
-   }
-
-   printf("The numbers entered are: ");
-   for( z=0 ; z < x ; z++ ) {
-      printf("%d ",y[z]);
-   }
-   free(y);
 } */

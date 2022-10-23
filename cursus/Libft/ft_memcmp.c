@@ -26,21 +26,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/* 
-#include <stdio.h>
-#include <string.h>
+
+/* #include <stdio.h>
 int main()
 {
     //Test
 	char *test1 = "abc";
     char *test2 = "def";
 	printf("%d\n",ft_memcmp(test1,test2,1));
-
-    printf("=========================================================\n");
-
-    //Orijinal
-    char *orj1 = "abc";
-    char *orj2 = "def";
-	printf("%d\n",memcmp(orj1,orj2,1));
-}
-*/
+} */

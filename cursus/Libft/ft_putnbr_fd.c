@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egur <egur@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 11:29:34 by egur              #+#    #+#             */
-/*   Updated: 2022/10/15 17:09:17 by egur             ###   ########.fr       */
+/*   Created: 2022/10/23 13:47:33 by egur              #+#    #+#             */
+/*   Updated: 2022/10/23 14:16:21 by egur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*str;
-	size_t			i;
+	int		sign;
+	char	c;
 
-	str = (unsigned char *)s;
-	c = (unsigned char)c;
-	i = 0;
-	while (i < n)
+	sign = 1;
+	if (n < 0)
 	{
-		if (str[i] == c)
-			return ((void *)str + i);
-		i++;
+		ft_putchar_fd('-', fd);
+		sign = -1;
 	}
-	return (0);
+	if (n / 10)
+		ft_putnbr_fd(n / 10 * sign, fd);
+	c = '0' + n % 10 * sign;
+	ft_putchar_fd(c, fd);
 }
-
-/* #include <stdio.h>
-int main()
-{
-    //Test
-	char *test = "https://github.com/egdit";
-    char test_c = 'g';
-	printf("%s\n",ft_memchr(test,test_c,16));
-} */
