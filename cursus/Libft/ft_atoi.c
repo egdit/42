@@ -43,6 +43,6 @@ int	ft_atoi(const char *str)
 /* #include <stdio.h>
 int main()
 {
-	char *test = "   ---12354asfsav";
+	char *test = "   -12354asfsav";
 	printf("%d\n",ft_atoi(test));
 } */
