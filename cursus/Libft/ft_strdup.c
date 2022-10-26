@@ -31,5 +31,5 @@ int main()
 {
     //Test
     char test_str[] = "Hello World!";
-    char* test = ft_strdup(test_str);
+    printf("%s",ft_strdup(test_str));
 } */
