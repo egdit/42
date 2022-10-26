@@ -26,7 +26,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /* #include <stdio.h>
 int main()
 {
-    char *test = "https://github.com/egdit";
-    char test_c = 'g';
+	char *test = "https://github.com/egdit";
+	char test_c = 'g';
 	printf("%s\n",ft_memchr(test,test_c,16));
 } */
