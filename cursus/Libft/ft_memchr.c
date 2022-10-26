@@ -14,17 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	str = (unsigned char *)s;
-	c = (unsigned char)c;
-	i = 0;
-	while (i < n)
+	while (n--)
 	{
-		if (str[i] == c)
-			return ((void *)str + i);
-		i++;
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((void *)s);
+		++s;
 	}
 	return (0);
 }
@@ -32,8 +26,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /* #include <stdio.h>
 int main()
 {
-    //Test
-	char *test = "https://github.com/egdit";
+    char *test = "https://github.com/egdit";
     char test_c = 'g';
 	printf("%s\n",ft_memchr(test,test_c,16));
 } */
